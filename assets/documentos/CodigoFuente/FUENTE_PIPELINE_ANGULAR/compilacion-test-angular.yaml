@@ -1,0 +1,28 @@
+  - stage: "Build_TEST"
+    dependsOn: "Prepare"
+    displayName: "Build TESTuction"
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+    jobs:
+      - job: "Build_TEST"
+        pool:
+          vmImage: "ubuntu-latest"
+        steps:
+          - task: DockerInstaller@0
+            inputs:
+              dockerVersion: "17.09.0-ce"
+          - task: Cache@2
+            inputs:
+              key: "node-modules | package.json"
+              restoreKeys: |
+                node-modules | package.json
+              path: node_modules
+            displayName: Cache npm
+          - task: Docker@2
+            inputs:
+              containerRegistry: "gcp-vb-transversal"
+              repository: "venta-boletos-transversal/ng-clientes"
+              command: "buildAndPush"
+              Dockerfile: "**/DockerfileTEST"
+              tags: |
+                $(Build.BuildId)
+                latest

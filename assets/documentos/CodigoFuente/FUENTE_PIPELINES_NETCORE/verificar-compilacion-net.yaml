@@ -1,0 +1,12 @@
+stages:
+  - stage: Verificar_Compilacion
+    displayName: "Verificar Compilacion"
+    jobs:
+      - job: "Restore"
+        steps:
+          - task: DotNetCoreCLI@2
+            inputs:
+              command: "restore"
+          - task: DotNetCoreCLI@2
+            inputs:
+              command: "build"

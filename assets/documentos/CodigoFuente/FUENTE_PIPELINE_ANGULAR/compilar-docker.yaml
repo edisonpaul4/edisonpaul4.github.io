@@ -1,0 +1,30 @@
+parameters:
+- name: 'nombre_microservicio'
+  type: string
+
+stages:
+  - stage: Generar_Docker
+    displayName: "Generar Imagen Docker"
+    dependsOn:
+      - Analisis_Codigo
+      - Verificar_Compilacion
+      - Pruebas_Unitarias
+    jobs:
+      - job: "ContruirImagen"
+        steps:
+          - task: DockerInstaller@0
+            inputs:
+              dockerVersion: "17.09.0-ce"
+          - task: Docker@2
+            inputs:
+              command: "build"
+              Dockerfile: "**/Dockerfile"
+          - task: Docker@2
+            inputs:
+              containerRegistry: "gcp-vb-transversal"
+              repository: "venta-boletos-transversal/${{ parameters.nombre_microservicio }}"
+              command: "buildAndPush"
+              Dockerfile: "**/Dockerfile"
+              tags: |
+                $(Build.BuildId)
+                latest

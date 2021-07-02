@@ -1,0 +1,18 @@
+parameters:
+- name: 'nombre_microservicio'
+  type: string
+- name: 'sonar_key'
+  type: string
+
+stages:
+- template: verificar-compilacion-net.yaml
+- template: pruebas-unitarias-net.yaml
+- template: analisis-codigo-net.yaml
+  parameters:
+    sonar_key: $(sonar_key)
+- template: compilar-docker.yaml
+  parameters:
+    nombre_microservicio: $(nombre_microservicio)
+- template: despliegue-desarrollo.yaml
+- template: despliegue-test.yaml
+- template: despliegue-produccion.yaml

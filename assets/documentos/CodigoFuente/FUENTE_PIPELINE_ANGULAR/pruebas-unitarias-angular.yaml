@@ -1,0 +1,27 @@
+stages:
+  - stage: Pruebas_Unitarias
+    displayName: 'Ejecucion Pruebas Unitarias'
+    pool:
+      vmImage: 'ubuntu-latest'
+    jobs:
+    - job: pruebasunitarias
+      steps:
+      - task: UseDotNet@2
+        inputs:
+          packageType: 'sdk'
+          version: '3.1.100'
+      - task: DotNetCoreCLI@2
+        displayName: 'Restaurar Dependencias'
+        inputs:
+          command: 'restore'
+      
+      - task: DotNetCoreCLI@2
+        displayName: 'Anadir Coverlet Package'
+        continueOnError: true
+        inputs:
+          command: 'custom'
+          custom: 'add'
+          arguments: 'package --version 2.0.1 coverlet.msbuild'
+          workingDirectory: ${{ parameters.testWorkingDirectory }}
+
+

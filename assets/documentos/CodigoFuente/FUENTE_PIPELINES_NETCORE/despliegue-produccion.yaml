@@ -1,0 +1,31 @@
+stages:
+  - stage: "Despliegue_PROD"
+    dependsOn: "Generar_Docker"
+    displayName: "Despliegue Production"
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+    jobs:
+      - deployment: K8s_PROD
+        environment: Production
+        pool:
+          vmImage: "ubuntu-latest"
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - checkout: self
+                - download: none
+                - task: replacetokens@3
+                  inputs:
+                    targetFiles: "k8s.yaml"
+                    encoding: "auto"
+                    writeBOM: true
+                    actionOnMissing: "fail"
+                    keepToken: false
+                    tokenPrefix: "#{"
+                    tokenSuffix: "}#"
+                - task: KubernetesManifest@0
+                  inputs:
+                    action: "deploy"
+                    kubernetesServiceConnection: "Production-default-1600487384952"
+                    namespace: "default"
+                    manifests: "k8s.yaml"

@@ -1,0 +1,55 @@
+parameters:
+- name: 'sonar_key'
+  type: string
+
+stages:
+  - stage: Analisis_Codigo
+    displayName: 'Analisis de Codigo Estatico'
+    pool:
+      vmImage: 'ubuntu-latest'
+    jobs:
+    - job: staticanalysis
+      displayName: 'Analisis de Codigo Estatico'     
+      steps:
+      - task: UseDotNet@2
+        displayName: 'Instalar .Net Core'
+        inputs:
+          packageType: 'sdk'
+          version: '2.0.0'
+
+      - task: SonarCloudPrepare@1
+        displayName: 'Preparar para Escaneo'
+        inputs:
+          SonarCloud: 'SonarCloud'
+          organization: fullstackec
+          scannerMode: 'MSBuild'
+          projectKey: 'FullstackEC_${{ parameters.sonar_key }}'
+          projectName: ${{ parameters.sonar_key }}
+
+      - task: UseDotNet@2
+        displayName: 'Instalar .Net Core'
+        inputs:
+          packageType: 'sdk'
+          version: '3.1.100'
+          
+      - task: DotNetCoreCLI@2
+        displayName: 'Restaurar Dependencias'
+        inputs:
+          command: 'restore'
+
+      - task: DotNetCoreCLI@2
+        displayName: 'Construir'
+        inputs:
+          command: 'build'
+
+      - task: UseDotNet@2
+        displayName: 'Instalar .Net Core'
+        inputs:
+          packageType: 'sdk'
+          version: '2.0.0'
+
+      - task: SonarCloudAnalyze@1
+        displayName: 'Correr Analisis'
+        
+      - task: SonarCloudPublish@1
+        displayName: 'Publicar Analisis'  

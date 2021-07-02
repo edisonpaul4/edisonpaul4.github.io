@@ -1,0 +1,31 @@
+stages:
+  - stage: "Despliegue_TEST"
+    dependsOn: "Generar_Docker"
+    displayName: "Despliegue TEST"
+    condition: and(succeeded(), ne(variables['Build.SourceBranch'], 'refs/heads/master'))
+    jobs:
+      - deployment: K8s_TEST
+        environment: Development
+        pool:
+          vmImage: "ubuntu-latest"
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - checkout: self
+                - download: none
+                - task: replacetokens@3
+                  inputs:
+                    targetFiles: "k8s.yaml"
+                    encoding: "auto"
+                    writeBOM: true
+                    actionOnMissing: "fail"
+                    keepToken: false
+                    tokenPrefix: "#{"
+                    tokenSuffix: "}#"
+                - task: KubernetesManifest@0
+                  inputs:
+                    action: "deploy"
+                    kubernetesServiceConnection: "Development-default-1601140403893"
+                    namespace: "default"
+                    manifests: "k8s.yaml"

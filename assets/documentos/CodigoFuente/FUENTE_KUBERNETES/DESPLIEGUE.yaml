@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ng-ventaboletos-deployment
+spec:
+  selector:
+    matchLabels:
+      app: ng-ventaboletos
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ng-ventaboletos
+    spec:
+      containers:
+        - name: ng-ventaboletos
+          image: gcr.io/venta-boletos-transversal/ng-ventaboletos:#{Build.BuildId}#
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: secrets
+              mountPath: "/home/app/appsettings.json"
+              subPath: appsettings.json
+      imagePullSecrets:
+        - name: google
+      volumes:
+        - name: secrets
+          secret:
+            secretName: appconfig

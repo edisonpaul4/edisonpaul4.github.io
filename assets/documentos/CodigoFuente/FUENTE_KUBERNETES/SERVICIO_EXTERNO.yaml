@@ -1,0 +1,15 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: net-clientes-gateway-ventaboletos-service
+  namespace: default
+  labels:
+    app: net-clientes-gateway-ventaboletos-service
+spec:
+  type: NodePort
+  ports:
+    - port: 1003
+      targetPort: 80
+  selector:
+    app: net-clientes-gateway-ventaboletos

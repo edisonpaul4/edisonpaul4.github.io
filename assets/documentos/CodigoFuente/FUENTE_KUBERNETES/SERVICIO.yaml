@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: ng-ventaboletos-service
+  namespace: default
+  labels:
+    app: ng-ventaboletos-service
+spec:
+  type: NodePort
+  ports:
+    - port: 1000
+      targetPort: 80
+  selector:
+    app: ng-ventaboletos
