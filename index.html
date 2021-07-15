@@ -1,454 +1,521 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>CI/CD Guía</title>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" >
-    <!-- Icon -->
-    <link rel="stylesheet" href="assets/fonts/line-icons.css">
-    <!-- Owl carousel -->
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/owl.theme.css">
-    
-    <!-- Animate -->
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <!-- Main Style -->
-    <link rel="stylesheet" href="assets/css/main.css">
-    <!-- Responsive Style -->
-    <link rel="stylesheet" href="assets/css/responsive.css">
+  <title>CI/CD Guía</title>
 
-  </head>
-  <body>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <!-- Icon -->
+  <link rel="stylesheet" href="assets/fonts/line-icons.css">
+  <!-- Owl carousel -->
+  <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="assets/css/owl.theme.css">
 
-    <!-- Header Area wrapper Starts -->
-    <header id="header-wrap">
-      <!-- Navbar Start -->
-      <nav class="navbar navbar-expand-md bg-inverse fixed-top scrolling-navbar">
-        <div class="container">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="lni-menu"></i>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav mr-auto w-100 justify-content-end clearfix">
-              <li class="nav-item active">
-                <a class="nav-link" href="#hero-area">
-                  Home
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <!-- Navbar End -->
+  <!-- Animate -->
+  <link rel="stylesheet" href="assets/css/animate.css">
+  <!-- Main Style -->
+  <link rel="stylesheet" href="assets/css/main.css">
+  <!-- Responsive Style -->
+  <link rel="stylesheet" href="assets/css/responsive.css">
 
-      <!-- Hero Area Start -->
-      <div id="hero-area" class="hero-area-bg">
-        <div class="container">      
-          <div class="row">
-            <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
-              <div class="contents">
-                <h2 class="head-title">Guia Integración y Despliegue Continuo</h2>
-                <p>Esta guia a sido creada con el objetivo de explicar los diferentes conceptos de CI/CD, desde la metodologia hasta la implementacion de los pipelines para tecnologias como .Net Core y Angular.</p>
-              </div>
-            </div>
-            <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
-              <div class="intro-img">
-                <img class="img-fluid" src="assets/img/intro-mobile.png" alt="">
-              </div>            
-            </div>
-          </div> 
-        </div> 
-      </div>
-      <!-- Hero Area End -->
+</head>
 
-    </header>
-    <!-- Header Area wrapper End -->
+<body>
 
-    <!-- Services Section Start -->
-    <section id="services" class="section-padding">
+  <!-- Header Area wrapper Starts -->
+  <header id="header-wrap">
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-md bg-inverse fixed-top scrolling-navbar">
       <div class="container">
-        <div class="section-header text-center">
-          <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Nuestras Guías</h2>
-          <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
-        </div>
-        <div class="row">
-          <!-- Services item -->
-          <div class="col-md-6 col-lg-4 col-xs-12">
-            <div class="services-item wow fadeInRight" data-wow-delay="0.3s">
-              <div class="icon">
-                <i class="lni-users"></i>
-              </div>
-              <div class="services-content">
-                <h3><a href="#">OnBoarding</a></h3>
-                <p>Ayuda a entender a alto nivel las diferentes tecnologias para que todo el equipo se comunique en el mismo idioma técnico. </p>
-              </div>
-            </div>
-          </div>
-            <!-- Services item -->
-            <div class="col-md-6 col-lg-4 col-xs-12">
-              <div class="services-item wow fadeInRight" data-wow-delay="0.6s">
-                <div class="icon">
-                  <i class="lni-cog"></i>
-                </div>
-               
-                <div class="services-content">
-                  <h3><a href="#">Técnicos</a></h3>
-                  <p>Ayuda a entender a bajo nivel las diferentes tecnologias para que los desarrolladores, DevOps y arquitectos puedan implementar estos flujos de CI/CD. </p>
-                </div>
-              </div>
-            </div>
-          <!-- Services item -->
-          <div class="col-md-6 col-lg-4 col-xs-12">
-            <div class="services-item wow fadeInRight" data-wow-delay="0.9s">
-              <div class="icon">
-                <i class="lni-stats-up"></i>
-              </div>
-              <div class="services-content">
-                <h3><a href="#">Código Fuente</a></h3>
-                <p>Son script de Azure DevOps listos para ser usados con .Net Core y Angular. </p>
-              </div>
-            </div>
-          </div>
-        
-    
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="lni-menu"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto w-100 justify-content-end clearfix">
+            <li class="nav-item active">
+              <a class="nav-link" href="#hero-area">
+                Home
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
-    </section>
-    <!-- Services Section End -->
+    </nav>
+    <!-- Navbar End -->
 
-    <!-- Features Section Start -->
-    <section id="features" class="section-padding">
+    <!-- Hero Area Start -->
+    <div id="hero-area" class="hero-area-bg">
       <div class="container">
-        <div class="section-header text-center">          
-          <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">OnBoarding</h2>
-          <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
-        </div>
         <div class="row">
-          <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-            <div class="content-left">
-              <div class="box-item wow fadeInLeft" data-wow-delay="0.3s">
-                <span class="icon">
-                  <img class="img-fluid" style="max-width: 70%;" src="/assets/img/icons/ppt.png">
-                  <img class="img-fluid" style="max-width: 60%;" src="/assets/img/icons/word.png">
-                </span>
-                
-                <div class="text">
-                  <h4>Git - GitFlow</h4>
-                  <p>Aprende como se versiona el codigo fuente mediante tecnologias como GIT.</p>
-                </div>
-              </div>
-              <div class="box-item wow fadeInLeft" data-wow-delay="0.6s">
-                <span class="icon">
-                  <img class="img-fluid" style="max-width: 70%;" src="/assets/img/icons/ppt.png">
-                  <img class="img-fluid" style="max-width: 60%;" src="/assets/img/icons/word.png">
-                </span>
-                <div class="text">
-                  <h4>Docker</h4>
-                  <p>Conoce la forma de crear los ejecutables de software multiplataforma.</p>
-                </div>
-              </div>
-              <div class="box-item wow fadeInRight" data-wow-delay="0.9s">
-                <span class="icon">
-                  <img class="img-fluid" style="max-width: 60%;" src="/assets/img/icons/word.png">
-                </span>
-                <div class="text">
-                  <h4>Azure DevOps</h4>
-                  <p>Descubre que bondades nos provee y como orquesta todo nuestro flujo de CI/CD.</p>
-                </div>
-              </div>
+          <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
+            <div class="contents">
+              <h2 class="head-title">Guia Integración y Despliegue Continuo</h2>
+              <p>Esta guia a sido creada con el objetivo de explicar los diferentes conceptos de CI/CD, desde la
+                metodologia hasta la implementacion de los pipelines para tecnologias como .Net Core y Angular.</p>
             </div>
           </div>
-          <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-            <div class="show-box wow fadeInUp" data-wow-delay="0.3s">
-              <img src="assets/img/feature/Onboarding-pana.png" alt="">
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-            <div class="content-right">
-              <div class="box-item wow fadeInRight" data-wow-delay="0.3s">
-                <span class="icon">
-                  <img class="img-fluid" style="max-width: 70%;" src="/assets/img/icons/ppt.png">
-                  <img class="img-fluid" style="max-width: 60%;" src="/assets/img/icons/word.png">
-                </span>
-                <div class="text">
-                  <h4>SCRUM - DEVOPS</h4>
-                  <p>Entiende la metodologia de trabajo durante todo el ciclo de desarrollo de Software.</p>
-                </div>
-              </div>
-              <div class="box-item wow fadeInRight" data-wow-delay="0.6s">
-                <span class="icon">
-                  <img class="img-fluid" style="max-width: 70%;" src="/assets/img/icons/ppt.png">
-                  <img class="img-fluid" style="max-width: 60%;" src="/assets/img/icons/word.png">
-                </span>
-                <div class="text">
-                  <h4>Sonar</h4>
-                  <p>Conoce como mejorar la calidad del codigo de tu software.</p>
-                </div>
-              </div>
-              <div class="box-item wow fadeInRight" data-wow-delay="0.9s">
-                <span class="icon">
-                  <img class="img-fluid" style="max-width: 70%;" src="/assets/img/icons/ppt.png">
-                </span>
-                <div class="text">
-                  <h4>Herramientas</h4>
-                  <p>Descubre que otras herramientas permiten que CI/CD funcione.</p>
-                </div>
-              </div>
+          <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
+            <div class="intro-img">
+              <img class="img-fluid" src="assets/img/intro-mobile.png" alt="">
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <!-- Features Section End -->   
-
-
-      <!-- Features Section Start -->
-      <section id="features" class="section-padding">
-        <div class="container">
-          <div class="section-header text-center">          
-            <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Técnicos</h2>
-            <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
-          </div>
-          <div class="row">
-            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-              <div class="content-left">
-                <div class="box-item wow fadeInLeft" data-wow-delay="0.3s">
-                  <span class="icon">
-                    <img class="img-fluid" style="max-width: 60%;" src="/assets/img/icons/word.png">
-                  </span>
-                  
-                  <div class="text">
-                    <h4>Git - GitFlow</h4>
-                    <p>Aprende como se versiona el codigo fuente mediante tecnologias como GIT.</p>
-                  </div>
-                </div>
-                <div class="box-item wow fadeInLeft" data-wow-delay="0.6s">
-                  <span class="icon">
-                    <img class="img-fluid" style="max-width: 60%;" src="/assets/img/icons/word.png">
-                  </span>
-                  <div class="text">
-                    <h4>Docker</h4>
-                    <p>Conoce la forma de crear los ejecutables de software multiplataforma.</p>
-                  </div>
-                </div>
-                <div class="box-item wow fadeInRight" data-wow-delay="0.9s">
-                  <span class="icon">
-                    <img class="img-fluid" style="max-width: 60%;" src="/assets/img/icons/word.png">
-                  </span>
-                  <div class="text">
-                    <h4>Pipelines</h4>
-                    <p>Descubre como se genera un flujo de CI/CD con su codigo fuente.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-              <div class="show-box wow fadeInUp" data-wow-delay="0.3s">
-                <img src="assets/img/feature/ilustracion-desarrolladores-web-dibujados-mano-plana_52683-55034.jpg" alt="">
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-              <div class="content-right">
-                <div class="box-item wow fadeInRight" data-wow-delay="0.3s">
-                  <span class="icon">
-                    <img class="img-fluid" style="max-width: 60%;" src="/assets/img/icons/word.png">
-                  </span>
-                  <div class="text">
-                    <h4>Kubernetes</h4>
-                    <p>Contenedores y su orquestador, aprende como desplegar contenedores en kubernetes.</p>
-                  </div>
-                </div>
-                <div class="box-item wow fadeInRight" data-wow-delay="0.6s">
-                  <span class="icon">
-                    <img class="img-fluid" style="max-width: 60%;" src="/assets/img/icons/word.png">
-                  </span>
-                  <div class="text">
-                    <h4>Sonar</h4>
-                    <p>Conoce como mejorar la calidad del codigo de tu software.</p>
-                  </div>
-                </div>
-   
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Features Section End -->   
-
-       <!-- Features Section Start -->
-       <section id="features" class="section-padding">
-        <div class="container">
-          <div class="section-header text-center">          
-            <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Código Fuente</h2>
-            <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
-          </div>
-          <div class="row">
-            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-              <div class="content-left">
-                <div class="box-item wow fadeInLeft" data-wow-delay="0.3s">
-                  <span class="icon">
-                    <img class="img-fluid" style="max-width: 80%;" src="/assets/img/icons/source.png">
-                  </span>
-                  
-                  <div class="text">
-                    <h4>Kubernetes</h4>
-                    <p>Conoce los YAMLs que definen el funcionamiento de Kubernetes.</p>
-                  </div>
-                </div>
-                <div class="box-item wow fadeInLeft" data-wow-delay="0.6s">
-                  <span class="icon">
-                    <img class="img-fluid" style="max-width: 80%;" src="/assets/img/icons/source.png">
-                  </span>
-                  <div class="text">
-                    <h4>Docker</h4>
-                    <p>Conoce la forma de crear los ejecutables de software multiplataforma.</p>
-                  </div>
-                </div>
-  
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-              <div class="show-box wow fadeInUp" data-wow-delay="0.3s">
-                <img src="assets/img/feature/code.jpg" alt="">
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-              <div class="content-right">
-                <div class="box-item wow fadeInRight" data-wow-delay="0.3s">
-                  <span class="icon">
-                    <img class="img-fluid" style="max-width: 80%;" src="/assets/img/icons/source.png">
-                  </span>
-                  <div class="text">
-                    <h4>CI/CD Angular</h4>
-                    <p>Explora el código fuente necesario para el CI/CD de un proyecto de Angular.</p>
-                  </div>
-                </div>
-                <div class="box-item wow fadeInRight" data-wow-delay="0.6s">
-                  <span class="icon">
-                    <img class="img-fluid" style="max-width: 80%;" src="/assets/img/icons/source.png">
-                  </span>
-                  <div class="text">
-                    <h4>CI/CD .Net Core</h4>
-                    <p>Explora el código fuente necesario para el CI/CD de un proyecto de .Net Core.</p>
-                  </div>
-                </div>
-   
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Features Section End --> 
-
-    <!-- Team Section Start -->
-    <section id="team" class="section-padding bg-gray">
-      <div class="container">
-        <div class="section-header text-center">          
-          <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Meet our team</h2>
-          <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6 col-md-12 col-xs-12">
-            <!-- Team Item Starts -->
-            <div class="team-item wow fadeInRight" data-wow-delay="0.2s">
-              <div class="team-img">
-                <img class="img-fluid" src="assets/img/team/paul.jpg" alt="">
-              </div>
-              <div class="contetn">
-                <div class="info-text">
-                  <h3><a href="#">PAUL MOSQUERA</a></h3>
-                  <p>Arquitecto de Soluciones</p>
-                </div>
-                <ul class="social-icons">
-                  <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
-                  <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
-                  <li><a href="#"><i class="lni-instagram-filled" aria-hidden="true"></i></a></li>
-                </ul>
-              </div>
-            </div>
-            <!-- Team Item Ends -->
-          </div>
-          <div class="col-lg-6 col-md-12 col-xs-12">
-            <!-- Team Item Starts -->
-            <div class="team-item wow fadeInRight" data-wow-delay="0.4s">
-              <div class="team-img">
-                <img class="img-fluid" src="assets/img/team/david.jpeg" alt="">
-              </div>
-              <div class="contetn">
-                <div class="info-text">
-                  <h3><a href="#">DAVID MARTINEZ</a></h3>
-                  <p>Desarrollador de Software</p>
-                </div>
-                <ul class="social-icons">
-                  <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
-                  <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
-                  <li><a href="#"><i class="lni-instagram-filled" aria-hidden="true"></i></a></li>
-                </ul>
-              </div>
-            </div>
-            <!-- Team Item Ends -->
-          </div>
-          <div class="col-lg-6 col-md-12 col-xs-12 offset-lg-3">
-            <!-- Team Item Starts -->
-            <div class="team-item wow fadeInRight" data-wow-delay="0.6s">
-              <div class="team-img">
-                <img class="img-fluid" src="assets/img/team/xavier.jpeg" alt="">
-              </div>
-              <div class="contetn">
-                <div class="info-text">
-                  <h3><a href="#">XAVIER RUIZ</a></h3>
-                  <p>Desarrollador de Software</p>
-                </div>
-                <ul class="social-icons">
-                  <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
-                  <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
-                  <li><a href="#"><i class="lni-instagram-filled" aria-hidden="true"></i></a></li>
-                </ul>
-              </div>
-            </div>
-            <!-- Team Item Ends -->
-          </div>
-    
-        </div>
-      </div>
-    </section>
-    <!-- Team Section End -->
-
-  
-
-  
-
-    
-
-    <!-- Go to Top Link -->
-    <a href="#" class="back-to-top">
-    	<i class="lni-arrow-up"></i>
-    </a>
-    
-    <!-- Preloader -->
-    <div id="preloader">
-      <div class="loader" id="loader-1"></div>
     </div>
-    <!-- End Preloader -->
-    
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="assets/js/jquery-min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <script src="assets/js/wow.js"></script>
-    <script src="assets/js/jquery.nav.js"></script>
-    <script src="assets/js/scrolling-nav.js"></script>
-    <script src="assets/js/jquery.easing.min.js"></script>  
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/form-validator.min.js"></script>
-    <script src="assets/js/contact-form-script.min.js"></script>
-      
-  </body>
+    <!-- Hero Area End -->
+
+  </header>
+  <!-- Header Area wrapper End -->
+
+  <!-- Services Section Start -->
+  <section id="services" class="section-padding">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Nuestras Guías</h2>
+        <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
+      </div>
+      <div class="row">
+        <!-- Services item -->
+        <div class="col-md-6 col-lg-4 col-xs-12">
+          <div class="services-item wow fadeInRight" data-wow-delay="0.3s">
+            <div class="icon">
+              <i class="lni-users"></i>
+            </div>
+            <div class="services-content">
+              <h3><a href="#">Paso #1: OnBoarding</a></h3>
+              <p>Ayuda a entender a alto nivel las diferentes tecnologias para que todo el equipo se comunique en el
+                mismo idioma técnico. </p>
+            </div>
+          </div>
+        </div>
+        <!-- Services item -->
+        <div class="col-md-6 col-lg-4 col-xs-12">
+          <div class="services-item wow fadeInRight" data-wow-delay="0.6s">
+            <div class="icon">
+              <i class="lni-cog"></i>
+            </div>
+
+            <div class="services-content">
+              <h3><a href="#">Paso #2: Técnicos</a></h3>
+              <p>Ayuda a entender a bajo nivel las diferentes tecnologias para que los desarrolladores, DevOps y
+                arquitectos puedan implementar estos flujos de CI/CD. </p>
+            </div>
+          </div>
+        </div>
+        <!-- Services item -->
+        <div class="col-md-6 col-lg-4 col-xs-12">
+          <div class="services-item wow fadeInRight" data-wow-delay="0.9s">
+            <div class="icon">
+              <i class="lni-stats-up"></i>
+            </div>
+            <div class="services-content">
+              <h3><a href="#">Paso #3: Código Fuente</a></h3>
+              <p>Son script de Azure DevOps listos para ser usados con .Net Core y Angular. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Services Section End -->
+
+  <!-- Features Section Start -->
+  <section id="features" class="section-padding">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">OnBoarding</h2>
+        <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+          <div class="content-left">
+            <div class="box-item wow fadeInLeft" data-wow-delay="0.3s">
+              <span class="icon">
+
+                <a href="/assets/documentos/Onboarding/ONBOARDING_GIT_GITFLOW.docx" download="">
+                  <img class="img-fluid" style="max-width: 60%;" src="/assets/img/icons/word.png">
+
+                </a>
+
+              </span>
+              <div class="text">
+                <h4>Git - GitFlow</h4>
+                <p>Aprende como se versiona el codigo fuente mediante tecnologias como GIT.</p>
+              </div>
+            </div>
+            <div class="box-item wow fadeInLeft" data-wow-delay="0.6s">
+              <span class="icon">
+                <a href="/assets/documentos/Onboarding/ONBOARDING_DOCKER.pptx" download="">
+                  <img class="img-fluid" style="max-width: 70%;" src="/assets/img/icons/ppt.png">
+
+                </a>
+                <a href="/assets/documentos/Onboarding/ONBOARDING_DOCKER.docx" download="">
+                  <img class="img-fluid" style="max-width: 60%;" src="/assets/img/icons/word.png">
+
+                </a>
+
+
+              </span>
+              <div class="text">
+                <h4>Docker</h4>
+                <p>Conoce la forma de crear los ejecutables de software multiplataforma.</p>
+              </div>
+            </div>
+            <div class="box-item wow fadeInRight" data-wow-delay="0.9s">
+              <span class="icon">
+                <a href="/assets/documentos/Onboarding/ONBOARDING_AZURE_DEVOPS.docx" download="">
+                  <img class="img-fluid" style="max-width: 60%;" src="/assets/img/icons/word.png">
+
+                </a>
+
+              </span>
+              <div class="text">
+                <h4>Azure DevOps</h4>
+                <p>Descubre que bondades nos provee y como orquesta todo nuestro flujo de CI/CD.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+          <div class="show-box wow fadeInUp" data-wow-delay="0.3s">
+            <img src="assets/img/feature/Onboarding-pana.png" alt="">
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+          <div class="content-right">
+            <div class="box-item wow fadeInRight" data-wow-delay="0.3s">
+              <span class="icon">
+                <a href="/assets/documentos/Onboarding/ONBOARDING_SCRUM_DEVOPS.pptx" download="">
+                  <img class="img-fluid" style="max-width: 70%;" src="/assets/img/icons/ppt.png">
+
+                </a>
+                <a href="/assets/documentos/Onboarding/ONBOARDING_SCRUM_DEVOPS.docx" download="">
+                  <img class="img-fluid" style="max-width: 60%;" src="/assets/img/icons/word.png">
+
+                </a>
+
+
+              </span>
+              <div class="text">
+                <h4>SCRUM - DEVOPS</h4>
+                <p>Entiende la metodologia de trabajo durante todo el ciclo de desarrollo de Software.</p>
+              </div>
+            </div>
+            <div class="box-item wow fadeInRight" data-wow-delay="0.6s">
+              <span class="icon">
+                <a href="/assets/documentos/Onboarding/ONBOARDING_SONAR.pptx" download="">
+                  <img class="img-fluid" style="max-width: 70%;" src="/assets/img/icons/ppt.png">
+
+                </a>
+                <a href="/assets/documentos/Onboarding/ONBOARDING_SONAR.docx" download="">
+                  <img class="img-fluid" style="max-width: 60%;" src="/assets/img/icons/word.png">
+
+                </a>
+
+
+              </span>
+              <div class="text">
+                <h4>Sonar</h4>
+                <p>Conoce como mejorar la calidad del codigo de tu software.</p>
+              </div>
+            </div>
+            <div class="box-item wow fadeInRight" data-wow-delay="0.9s">
+              <span class="icon">
+                <a href="/assets/documentos/Onboarding/ONBOARDING_HERRAMIENTAS.pptx" download="">
+                  <img class="img-fluid" style="max-width: 70%;" src="/assets/img/icons/ppt.png">
+
+                </a>
+
+              </span>
+              <div class="text">
+                <h4>Herramientas</h4>
+                <p>Descubre que otras herramientas permiten que CI/CD funcione.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Features Section End -->
+
+
+  <!-- Features Section Start -->
+  <section id="features" class="section-padding">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Técnicos</h2>
+        <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+          <div class="content-left">
+            <div class="box-item wow fadeInLeft" data-wow-delay="0.3s">
+              <span class="icon">
+                <a href="/assets/documentos/Onboarding/TEC_GIT_GITFLOW.docx" download="">
+                  <img class="img-fluid" style="max-width: 60%;" src="/assets/img/icons/word.png">
+
+                </a>
+                
+              </span>
+
+              <div class="text">
+                <h4>Git - GitFlow</h4>
+                <p>Aprende como se versiona el codigo fuente mediante tecnologias como GIT.</p>
+              </div>
+            </div>
+            <div class="box-item wow fadeInLeft" data-wow-delay="0.6s">
+              <span class="icon">
+                <a href="/assets/documentos/Tecnicos/TEC_DOCKER_.docx" download="">
+                  <img class="img-fluid" style="max-width: 60%;" src="/assets/img/icons/word.png">
+                </a>
+                
+              </span>
+              <div class="text">
+                <h4>Docker</h4>
+                <p>Conoce la forma de crear los ejecutables de software multiplataforma.</p>
+              </div>
+            </div>
+            <div class="box-item wow fadeInRight" data-wow-delay="0.9s">
+              <span class="icon">
+                <a href="/assets/documentos/Tecnicos/TEC_PIPELINES.docx" download="">
+                  <img class="img-fluid" style="max-width: 60%;" src="/assets/img/icons/word.png">
+                </a>
+               
+              </span>
+              <div class="text">
+                <h4>Pipelines</h4>
+                <p>Descubre como se genera un flujo de CI/CD con su codigo fuente.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+          <div class="show-box wow fadeInUp" data-wow-delay="0.3s">
+            <img src="assets/img/feature/ilustracion-desarrolladores-web-dibujados-mano-plana_52683-55034.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+          <div class="content-right">
+            <div class="box-item wow fadeInRight" data-wow-delay="0.3s">
+              <span class="icon">
+                <a href="/assets/documentos/Tecnicos/TEC_KUBERNETES.docx" download="">
+                  <img class="img-fluid" style="max-width: 60%;" src="/assets/img/icons/word.png">
+                </a>
+                
+              </span>
+              <div class="text">
+                <h4>Kubernetes</h4>
+                <p>Contenedores y su orquestador, aprende como desplegar contenedores en kubernetes.</p>
+              </div>
+            </div>
+            <div class="box-item wow fadeInRight" data-wow-delay="0.6s">
+              <span class="icon">
+                <a href="/assets/documentos/Tecnicos/TEC_SONAR.docx" download="">
+                  <img class="img-fluid" style="max-width: 60%;" src="/assets/img/icons/word.png">
+                </a>
+                
+              </span>
+              <div class="text">
+                <h4>Sonar</h4>
+                <p>Conoce como mejorar la calidad del codigo de tu software.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Features Section End -->
+
+  <!-- Features Section Start -->
+  <section id="features" class="section-padding">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Código Fuente</h2>
+        <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+          <div class="content-left">
+            <div class="box-item wow fadeInLeft" data-wow-delay="0.3s">
+              <span class="icon">
+                <a href="https://github.com/edisonpaul4/edisonpaul4.github.io/tree/master/assets/documentos/CodigoFuente/FUENTE_KUBERNETES" target="_blank">
+                  <img class="img-fluid" style="max-width: 80%;" src="/assets/img/icons/source.png">
+                </a>
+               
+              </span>
+
+              <div class="text">
+                <h4>Kubernetes</h4>
+                <p>Conoce los YAMLs que definen el funcionamiento de Kubernetes.</p>
+              </div>
+            </div>
+            <div class="box-item wow fadeInLeft" data-wow-delay="0.6s">
+              <span class="icon">
+                <a href="https://github.com/edisonpaul4/edisonpaul4.github.io/tree/master/assets/documentos/CodigoFuente/FUENTE_DOCKER" target="_blank">
+                  <img class="img-fluid" style="max-width: 80%;" src="/assets/img/icons/source.png">
+                </a>
+              </span>
+              <div class="text">
+                <h4>Docker</h4>
+                <p>Conoce la forma de crear los ejecutables de software multiplataforma.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+          <div class="show-box wow fadeInUp" data-wow-delay="0.3s">
+            <img src="assets/img/feature/code.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+          <div class="content-right">
+            <div class="box-item wow fadeInRight" data-wow-delay="0.3s">
+              <span class="icon">
+                <a href="https://github.com/edisonpaul4/edisonpaul4.github.io/tree/master/assets/documentos/CodigoFuente/FUENTE_PIPELINE_ANGULAR" target="_blank">
+                  <img class="img-fluid" style="max-width: 80%;" src="/assets/img/icons/source.png">
+                </a>
+                
+              </span>
+              <div class="text">
+                <h4>CI/CD Angular</h4>
+                <p>Explora el código fuente necesario para el CI/CD de un proyecto de Angular.</p>
+              </div>
+            </div>
+            <div class="box-item wow fadeInRight" data-wow-delay="0.6s">
+              <span class="icon">
+                <a href="https://github.com/edisonpaul4/edisonpaul4.github.io/tree/master/assets/documentos/CodigoFuente/FUENTE_PIPELINES_NETCORE" target="_blank">
+                  <img class="img-fluid" style="max-width: 80%;" src="/assets/img/icons/source.png">
+                </a>
+                
+              </span>
+              <div class="text">
+                <h4>CI/CD .Net Core</h4>
+                <p>Explora el código fuente necesario para el CI/CD de un proyecto de .Net Core.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Features Section End -->
+
+  <!-- Team Section Start -->
+  <section id="team" class="section-padding bg-gray">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Meet our team</h2>
+        <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 col-md-12 col-xs-12">
+          <!-- Team Item Starts -->
+          <div class="team-item wow fadeInRight" data-wow-delay="0.2s">
+            <div class="team-img">
+              <img class="img-fluid" src="assets/img/team/paul.jpg" alt="">
+            </div>
+            <div class="contetn">
+              <div class="info-text">
+                <h3><a href="#">PAUL MOSQUERA</a></h3>
+                <p>Arquitecto de Soluciones</p>
+              </div>
+              <ul class="social-icons">
+                <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="lni-instagram-filled" aria-hidden="true"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- Team Item Ends -->
+        </div>
+        <div class="col-lg-6 col-md-12 col-xs-12">
+          <!-- Team Item Starts -->
+          <div class="team-item wow fadeInRight" data-wow-delay="0.4s">
+            <div class="team-img">
+              <img class="img-fluid" src="assets/img/team/david.jpeg" alt="">
+            </div>
+            <div class="contetn">
+              <div class="info-text">
+                <h3><a href="#">DAVID MARTINEZ</a></h3>
+                <p>Desarrollador de Software</p>
+              </div>
+              <ul class="social-icons">
+                <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="lni-instagram-filled" aria-hidden="true"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- Team Item Ends -->
+        </div>
+        <div class="col-lg-6 col-md-12 col-xs-12 offset-lg-3">
+          <!-- Team Item Starts -->
+          <div class="team-item wow fadeInRight" data-wow-delay="0.6s">
+            <div class="team-img">
+              <img class="img-fluid" src="assets/img/team/xavier.jpeg" alt="">
+            </div>
+            <div class="contetn">
+              <div class="info-text">
+                <h3><a href="#">XAVIER RUIZ</a></h3>
+                <p>Desarrollador de Software</p>
+              </div>
+              <ul class="social-icons">
+                <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="lni-instagram-filled" aria-hidden="true"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- Team Item Ends -->
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- Team Section End -->
+
+
+
+
+
+
+
+  <!-- Go to Top Link -->
+  <a href="#" class="back-to-top">
+    <i class="lni-arrow-up"></i>
+  </a>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader" id="loader-1"></div>
+  </div>
+  <!-- End Preloader -->
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="assets/js/jquery-min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/owl.carousel.min.js"></script>
+  <script src="assets/js/wow.js"></script>
+  <script src="assets/js/jquery.nav.js"></script>
+  <script src="assets/js/scrolling-nav.js"></script>
+  <script src="assets/js/jquery.easing.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/form-validator.min.js"></script>
+  <script src="assets/js/contact-form-script.min.js"></script>
+
+</body>
+
 </html>
